@@ -1,0 +1,27 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "custom-checkout-extension-new"
+client_id = "d7ece0135bc752a5be3d2a894b5dbbf5"
+application_url = "https://major-anime-build-mins.trycloudflare.com"
+embedded = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://major-anime-build-mins.trycloudflare.com/auth/callback",
+  "https://major-anime-build-mins.trycloudflare.com/auth/shopify/callback",
+  "https://major-anime-build-mins.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2023-10"
+
+[pos]
+embedded = false
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "cpim-sandbox-2.myshopify.com"

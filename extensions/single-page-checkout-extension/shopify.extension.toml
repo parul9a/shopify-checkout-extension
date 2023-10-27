@@ -1,0 +1,141 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2023-07"
+
+[[extensions]]
+type = "ui_extension"
+name = "Document Type"
+handle = "document-type"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/targets-overview
+[[extensions.targeting]]
+target = "purchase.checkout.block.render"
+module = "./src/Checkout.jsx"
+export = "checkoutBlock"
+
+[[extensions.targeting]]
+target = "purchase.checkout.delivery-address.render-before"
+module = "./src/Checkout.jsx"
+export = "deliveryAddress"
+
+[[extensions.targeting]]
+target = "purchase.checkout.contact.render-after"
+module = "./src/DocumentType.jsx"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+[extensions.settings]
+  [[extensions.settings.fields]]
+  key = "enableDropdown"
+  type = "single_line_text_field"
+  name = "Enable Dropdown Values"
+   [[extensions.settings.fields.validations]]
+    name = "choices"
+    value = "[\"Show\", \"Hide\"]"
+  [[extensions.settings.fields]]
+  key = "Max_length_title"
+  type = "number_integer"
+  name = "Enter the maxlength of input text field"
+  [[extensions.settings.fields]]
+  key = "Dropdown_title"
+  type = "single_line_text_field"
+  name = "Name of the select dropdown"
+  [[extensions.settings.fields]]
+  key = "Name_text_field"
+  type = "single_line_text_field"
+  name = "Name of the input text field"
+  [[extensions.settings.fields]]
+  key = "dropdown_value_1"
+  type = "single_line_text_field"
+  name = "Name of the dropdown value 1"
+  [[extensions.settings.fields]]
+  key = "Regular_expression_dropdown_1"
+  type = "single_line_text_field"
+  name = "Regular expression for dropdown 1"
+  [[extensions.settings.fields]]
+  key = "Custom_error_message_regex_1"
+  type = "single_line_text_field"
+  name = "Custom error message for regex 1"
+  [[extensions.settings.fields]]
+  key = "dropdown_value_2"
+  type = "single_line_text_field"
+  name = "Name of the dropdown value 2"
+  [[extensions.settings.fields]]
+  key = "Regular_expression_dropdown_2"
+  type = "single_line_text_field"
+  name = "Regular expression for dropdown 2"
+  [[extensions.settings.fields]]
+  key = "Custom_error_message_regex_2"
+  type = "single_line_text_field"
+  name = "Custom error message for regex 2"
+  [[extensions.settings.fields]]
+  key = "dropdown_value_3"
+  type = "single_line_text_field"
+  name = "Name of the dropdown value 3"
+  [[extensions.settings.fields]]
+  key = "Regular_expression_dropdown_3"
+  type = "single_line_text_field"
+  name = "Regular expression for dropdown 3"
+  [[extensions.settings.fields]]
+  key = "Custom_error_message_regex_3"
+  type = "single_line_text_field"
+  name = "Custom error message for regex 3"
+
+  [[extensions.settings.fields]]
+  key = "dropdown_value_4"
+  type = "single_line_text_field"
+  name = "Name of the dropdown value 4"
+  
+  [[extensions.settings.fields]]
+  key = "Regular_expression_dropdown_4"
+  type = "single_line_text_field"
+  name = "Regular expression for dropdown 4"
+  
+  [[extensions.settings.fields]]
+  key = "Custom_error_message_regex_4"
+  type = "single_line_text_field"
+  name = "Custom error message for regex 4"
+
+  [[extensions.settings.fields]]
+  key = "dropdown_value_5"
+  type = "single_line_text_field"
+  name = "Name of the dropdown value 5"
+  
+  [[extensions.settings.fields]]
+  key = "Regular_expression_dropdown_5"
+  type = "single_line_text_field"
+  name = "Regular expression for dropdown 5"
+  
+  [[extensions.settings.fields]]
+  key = "Custom_error_message_regex_5"
+  type = "single_line_text_field"
+  name = "Custom error message for regex 5"
+
